@@ -13,7 +13,7 @@ git config --global user.email "https://github.com/jangmachul"
 git remote add origin https://github.com/jangmachul/study20240509.git
 git push -u origin master
 
-# 깃에 올려서 일일 일 커밋을 습관하 하면 좋다.
+# 깃에 올려서 일일 일 커밋을 습관화 하면 좋다.
 ```
 
 # 동기와 비동기 이벤트 루프
