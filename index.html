@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const num = 10;
+const promise2 = new Promise((res, rej) =>{
+    if(num>5) {
+        res("num이 5보다 크다");
+    }else {
+        rej("num이 5보다 작아")
+    }
+});
+promise2.then((result) => {console.log(result)}) .catch((error) => {console.log(error) });
+
+console.log(promise2.then(()=>{}).catch(()=>{}));
+
+
+
+// function add(num){
+//     return num + 1;
+// }
+// function addPromise(addfn, num) {
+//     return new Promise((res, rej) => {
+//         //코드를 작성하는 문법에 따라 다른데
+
+//         //서버에서 데이터를 요청
+//         const data = // 요청을 하는 코드를 post, get 응답을 받기전까지 기다리고
+//             // {result :"성공", data : "db에서 가져온 데이터"} || {result : "실패"}
+//         if (data.result ==="성공") {
+//             // 성공을 하면 호출해서 성공의 여부를 출력해줄 함수
+//             res({result "성공"})
+//         }
+//         res(addfn(num));
+// })
+// }
+// addPromise(add, 1).then((result) => {console.log(result) }).catch((error) => {console.log(error) })
+
+// addPromise = {Promise 생성자 함수 콜백함수가 전달되고 (res, rej) => (우리가 작성한 함수의 내용)}
+// Promise.then() === 메서드의 반환 값은 {promise} then의 콜백함수가 호출되는 시기는 Promise 객체에서 첫번째로 전달한 매개변수에 인자값이
+// 함수인데 이 함수가 호출 되면 then에 전달한 콜백함수를 호출하는데 매개변수의 인자 값으로 첫번째 매개변수로 전달받은 인자값의 함수가 호출 될 때 전달한 인자값이 전달된다.
+
+// res 는 promise 생성할 때 콜백으로 전달한 함수의 첫번째 인자값 === 함수
+// res ("성공의 결과값");
+// promise 객체의 then 메서드로 전달한 콜백함수의 내용을 호출한다.
+// then 에 전달한 콜백 함수를 호출할 때 첫번째 인자값으로 전달 해준다.
+// ("성공의 결과값") => {console.log(""성공의 결과값"")};
+
+const promise3 = new Promise((res, rej)=> {
+    // 서버에 요청을 보냈다.
+    const _res = {result : "성공", data : [{id : 1, name : 2, age :3}, {id : 1, name : 2, age :3}, {id : 1, name : 2, age :3}]}
+
+    if (_res.result ==="성공"){
+        res(res);
+    }else {
+        rej("error 데이터 요청 실패");
+    }
+})
+// promise3.then(({data}) => {console.log(data)});
+promise3.then(({res}) => {console.log(res.data)}).catch((err) => {console.log(err)});
+</script>
+</html>
