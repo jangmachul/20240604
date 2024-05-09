@@ -81,7 +81,7 @@ a();
 > 비동기 처리를 할 때 사용을 하고
 > 대기, 성공, 실패의 반환값과 매서드를 가지고 있는 객체
 ```js
-const promise = new promise((res, rej) => { // 매개변수 이름 고정아님
+const promise = new Promise((res, rej) => { // 매개변수 이름 고정아님
     //비동기 처리 구문
     // setTimeout
     if("성공"){
@@ -152,7 +152,7 @@ promise2.catch((error) => (console.log(error)));
 
 
 const callbackkpromise = (text, time) =>{
-    retrun new promise((res, rej) =>{
+    return new Promise((res, rej) =>{
         try {
             // 정상적으로 코드가 실행되면
             // 비동기 처리
@@ -224,3 +224,11 @@ async function a() {
 }
 a();
 ```
+주의 할 점
+then
+catch
+-------------------------------------------------
+async await
+// 같이 쓰면 잘 모르고 사용했다.
+
+// 실습 1초마다 1씩 증가되는 비동기 처리를 해서 함수로 작성을 해보자. 5까지 증가

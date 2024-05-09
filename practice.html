@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const callbackpromise = (count) =>{
+    return new Promise((res) => {
+        try{
+         setTimeout(() =>{ 
+            res(count);
+        },1000);
+    }catch(e){
+    }
+    });
+}
+const asyncFn = async () => {
+    try{
+        for(let i = 1; i < 6; i++){
+            const callbackPromise = await callbackpromise(i);
+            console.log(callbackPromise)
+        }
+    }catch{}
+}
+console.log(asyncFn())
+    // callbackpromise.then((result) => {
+    //     console.log(result);
+    
+    // });
+    
+
+</script>
+</html>
